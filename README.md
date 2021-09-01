@@ -1,6 +1,6 @@
 # Links #
-* [Website](https://ceeoinnovations.github.io/hackathon-2021/)
-* [Data (Google Drive)](https://drive.google.com/drive/folders/1QYH_SIuhGPQyQdSwdye5zqEzu_FLeaNi?usp=sharing)
+* [Website](https://ceeoinnovations.github.io/smart-motor-prototypes/)
+* [Data (Google Drive)](https://drive.google.com/drive/folders/1VlpBWuKi5a2ZcsE68S0rWDeeBwFibp3g?usp=sharing)
 
 # How to build a Product Website Using Google Sheets #
 ## Google Drive Setup ##
