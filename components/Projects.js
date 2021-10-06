@@ -10,7 +10,7 @@ export default function Projects(projects, themes, about){
         <div id="projects" class="wrapper">
             <div class="project-list">
                 ${SubmitButton(about)}
-                ${ProjectItems(about, projects)}
+                ${ProjectItems(projects)}
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@ export function SubmitButton(about){
 }
 
 // return HTML for project items
-export function ProjectItems(about, projects){
+export function ProjectItems(projects){
     return projects.map(d=>`
         
         <a href="?project=${d.title}" class="project-box">
@@ -72,9 +72,10 @@ export function handleProjectFilter(data){
     let conds = document.querySelectorAll('.filter input[name="project-filter"]');
     conds.forEach(cond=>cond.addEventListener('change', function(event){
         let checked = event.target.value; 
+        console.log(checked);
         if (checked==='all'){
             document.querySelector('.theme-info').innerHTML = DefaultInfo(data.projects);
-            document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, data.projects);
+            document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.projects);
         }else{
             checked = checked.replace(/ /g, "").toLowerCase();
             let filteredProjects = data.projects.filter(d=>{
@@ -87,7 +88,7 @@ export function handleProjectFilter(data){
                 return d.id === checked;
             });
             document.querySelector('.theme-info').innerHTML = UpdateThemeInfo(filteredProjects, checkedTheme);
-            document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, filteredProjects);
+            document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(filteredProjects);
         }
     }));
 }
